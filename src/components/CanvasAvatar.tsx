@@ -7,7 +7,7 @@ interface CanvasAvatarProps {
   className?: string
 }
 
-const CanvasAvatar: React.FC<CanvasAvatarProps> = ({ src, alt, size = 'md', className }) => {
+const CanvasAvatar: React.FC<CanvasAvatarProps> = ({ src, alt: _alt, size = 'md', className }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
