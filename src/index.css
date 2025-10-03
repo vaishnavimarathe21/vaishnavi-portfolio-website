@@ -25,3 +25,62 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
+
+/* Security measures for images */
+img[src*="avatar.jpg"], 
+img[src*="avatar.jpeg"], 
+img[src*="avatar.png"] {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  -khtml-user-select: none !important;
+  pointer-events: none !important;
+  filter: blur(0.3px) !important;
+  image-rendering: optimizeQuality !important;
+}
+
+/* Prevent screenshots on mobile devices */
+@media screen and (max-width: 768px) {
+  img[src*="avatar.jpg"], 
+  img[src*="avatar.jpeg"], 
+  img[src*="avatar.png"] {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+}
+
+/* Additional security overlay */
+.secure-image-container {
+  position: relative;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-select: none !important;
+}
+
+.secure-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
+  pointer-events: auto;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-select: none !important;
+}

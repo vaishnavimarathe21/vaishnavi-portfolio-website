@@ -1,14 +1,17 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Header from './components/Header.tsx'
 import Footer from './components/Footer.tsx'
 import ScrollToTopButton from './components/ScrollToTopButton.tsx'
 import Home from './pages/Home.tsx'
 import About from './pages/About.tsx'
-import Projects from './pages/Projects.tsx' 
+import Projects from './pages/Projects.tsx'
 import ProjectDetail from './pages/ProjectDetail.tsx'
 import Contact from './pages/Contact.tsx'
 import Developer from './pages/Developer.tsx'
+import { addImageSecurity, injectSecurityCSS } from './utils/imageSecurity'
 
 function App() {
   useEffect(() => {
@@ -16,6 +19,10 @@ function App() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual'
     }
+    
+    // Initialize image security measures
+    addImageSecurity()
+    injectSecurityCSS()
   }, [])
 
   return (
@@ -35,6 +42,8 @@ function App() {
         </main>
         <Footer />
         <ScrollToTopButton />
+        <Analytics />
+        <SpeedInsights />
       </div>
     </Router>
   )
