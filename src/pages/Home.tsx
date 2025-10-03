@@ -127,6 +127,11 @@ const Home = () => {
                 alt="Vaishnavi Marathe" 
                 className="w-full h-full object-cover"
                 onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                onDrag={(e) => e.preventDefault()}
+                onDragEnd={(e) => e.preventDefault()}
+                draggable={false}
+                style={{ userSelect: 'none', pointerEvents: 'none' }}
               />
             </motion.div>
           </motion.div>
@@ -418,6 +423,11 @@ const Home = () => {
                     alt="Vaishnavi Marathe" 
                     className="w-40 h-40 rounded-full object-cover"
                     onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
+                    onDrag={(e) => e.preventDefault()}
+                    onDragEnd={(e) => e.preventDefault()}
+                    draggable={false}
+                    style={{ userSelect: 'none', pointerEvents: 'none' }}
                   />
                 </div>
               </div>

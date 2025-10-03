@@ -96,6 +96,11 @@ const About = () => {
                 alt="Vaishnavi Marathe" 
                 className="w-full h-full object-cover"
                 onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                onDrag={(e) => e.preventDefault()}
+                onDragEnd={(e) => e.preventDefault()}
+                draggable={false}
+                style={{ userSelect: 'none', pointerEvents: 'none' }}
               />
             </motion.div>
             
