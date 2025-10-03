@@ -18,6 +18,19 @@ function App() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual'
     }
+
+    // Disable right-click on entire website
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault()
+    }
+
+    // Add event listener to document
+    document.addEventListener('contextmenu', handleContextMenu)
+
+    // Cleanup function
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu)
+    }
   }, [])
 
   return (
