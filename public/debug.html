@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Projects Loading</title>
+</head>
+<body>
+    <h1>Debug Projects Loading</h1>
+    <div id="output"></div>
+    
+    <script>
+        async function testProjectsLoading() {
+            const output = document.getElementById('output');
+            
+            try {
+                output.innerHTML = '<p>Testing MDX file loading...</p>';
+                
+                // Test loading one MDX file
+                const response = await fetch('/california-housing-dashboard.mdx');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const content = await response.text();
+                console.log('Content loaded:', content.substring(0, 200) + '...');
+                
+                // Test frontmatter parsing
+                const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+                const match = content.match(frontmatterRegex);
+                
+                if (!match) {
+                    throw new Error('No frontmatter found in MDX file');
+                }
+                
+                const frontmatterText = match[1];
+                console.log('Frontmatter text:', frontmatterText);
+                
+                // Simple parsing
+                const frontmatter = {};
+                const lines = frontmatterText.split('\n');
+                
+                for (const line of lines) {
+                    const trimmed = line.trim();
+                    if (trimmed === '') continue;
+                    
+                    if (trimmed.includes(':')) {
+                        const [key, ...valueParts] = trimmed.split(':');
+                        const value = valueParts.join(':').trim();
+                        frontmatter[key.trim()] = value.replace(/^["']|["']$/g, '');
+                    }
+                }
+                
+                console.log('Parsed frontmatter:', frontmatter);
+                
+                output.innerHTML = `
+                    <h2>Success!</h2>
+                    <p>Title: ${frontmatter.title}</p>
+                    <p>Category: ${frontmatter.category}</p>
+                    <p>Technologies: ${frontmatter.technologies}</p>
+                    <p>Description: ${frontmatter.description}</p>
+                `;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                output.innerHTML = `<h2>Error:</h2><p>${error.message}</p>`;
+            }
+        }
+        
+        testProjectsLoading();
+    </script>
+</body>
+</html>

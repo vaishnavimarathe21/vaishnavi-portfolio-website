@@ -1,0 +1,21 @@
+{
+  "name": "Vaishnavi Marathe - Data Analyst Portfolio",
+  "short_name": "VM Portfolio",
+  "description": "Portfolio website showcasing data analysis projects and AI/ML expertise",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "data-analysis", "ai-ml"],
+  "lang": "en",
+  "dir": "ltr"
+}
