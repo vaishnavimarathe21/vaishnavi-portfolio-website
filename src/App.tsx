@@ -11,7 +11,6 @@ import Projects from './pages/Projects.tsx'
 import ProjectDetail from './pages/ProjectDetail.tsx'
 import Contact from './pages/Contact.tsx'
 import Developer from './pages/Developer.tsx'
-import { addImageSecurity, injectSecurityCSS } from './utils/imageSecurity'
 
 function App() {
   useEffect(() => {
@@ -19,10 +18,6 @@ function App() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual'
     }
-    
-    // Initialize image security measures
-    addImageSecurity()
-    injectSecurityCSS()
   }, [])
 
   return (

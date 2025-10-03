@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { GraduationCap, Briefcase, Trophy, Code2, Database, BarChart3, Brain } from 'lucide-react'
 import { useEffect } from 'react'
-import CanvasAvatar from '../components/CanvasAvatar'
 
 const About = () => {
   useEffect(() => {
@@ -92,12 +91,11 @@ const About = () => {
               className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center overflow-hidden shadow-2xl"
             >
               {/* Profile Picture */}
-            <CanvasAvatar
-              src="/images/avatar.jpg"
-              alt="Vaishnavi Marathe"
-              size="xl"
-              className="w-full h-full"
-            />
+              <img 
+                src="/images/avatar.jpg" 
+                alt="Vaishnavi Marathe" 
+                className="w-full h-full object-cover"
+              />
             </motion.div>
             
             {/* Name and Title */}

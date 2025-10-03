@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { Code, Database, BarChart3, Sparkles, Award, Users, Calendar, BookOpen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import CanvasAvatar from '../components/CanvasAvatar'
 
 const Home = () => {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0)
@@ -123,12 +122,11 @@ const Home = () => {
               className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden shadow-xl"
             >
               {/* Profile Picture */}
-            <CanvasAvatar
-              src="/images/avatar.jpg"
-              alt="Vaishnavi Marathe"
-              size="xl"
-              className="w-full h-full"
-            />
+              <img 
+                src="/images/avatar.jpg" 
+                alt="Vaishnavi Marathe" 
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </motion.div>
 
@@ -414,11 +412,10 @@ const Home = () => {
               </div>
               <div className="text-center">
                 <div className="w-48 h-48 mx-auto bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-full flex items-center justify-center">
-                  <CanvasAvatar 
+                  <img 
                     src="/images/avatar.jpg" 
                     alt="Vaishnavi Marathe" 
-                    size="xl"
-                    className="w-40 h-40"
+                    className="w-40 h-40 rounded-full object-cover"
                   />
                 </div>
               </div>
