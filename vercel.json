@@ -1,15 +1,4 @@
 {
-  "functions": {
-    "api/submit-form/index.ts": {
-      "runtime": "nodejs18.x"
-    },
-    "api/projects/index.ts": {
-      "runtime": "nodejs18.x"
-    },
-    "api/projects/[slug]/index.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
