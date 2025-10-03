@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
@@ -7,6 +7,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isDark, setIsDark] = useState(false)
   const location = useLocation()
+  const menuRef = useRef<HTMLDivElement>(null)
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -26,6 +27,23 @@ const Header = () => {
     }
   }, [])
 
+  // Handle click outside to close mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
+
   const toggleTheme = () => {
     const newTheme = !isDark
     setIsDark(newTheme)
@@ -39,8 +57,18 @@ const Header = () => {
     }
   }
 
+  // Handle mobile menu hover
+  const handleMouseEnter = () => {
+    setIsOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsOpen(false)
+  }
+
   return (
     <motion.header 
+      ref={menuRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700"
@@ -55,8 +83,9 @@ const Header = () => {
             >
               <span className="text-white font-bold text-sm">VM</span>
             </motion.div>
-            <span className="text-xl font-bold text-slate-900 dark:text-white">
+            <span className="text-xl font-bold text-slate-900 dark:text-white hidden sm:block relative group cursor-pointer">
               Vaishnavi Marathe
+              <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 rounded-full w-0 opacity-0 group-hover:w-full group-hover:opacity-100 transition-all duration-700 ease-out" />
             </span>
           </Link>
 
@@ -100,9 +129,15 @@ const Header = () => {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               className="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? (
+                <X className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+              ) : (
+                <Menu className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+              )}
             </button>
           </div>
         </div>
@@ -114,6 +149,8 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               className="md:hidden border-t border-slate-200 dark:border-slate-700"
             >
               <nav className="py-4 space-y-2">

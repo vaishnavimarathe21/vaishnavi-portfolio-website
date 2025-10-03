@@ -154,7 +154,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project) => {
             const CategoryIcon = getCategoryIcon(project.category)
@@ -166,61 +166,61 @@ const Projects = () => {
                 className="bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Project Image */}
-                <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 flex items-center justify-center">
-                  <CategoryIcon className="w-16 h-16 text-primary-600 dark:text-primary-400" />
+                <div className="h-32 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 flex items-center justify-center">
+                  <CategoryIcon className="w-12 h-12 text-primary-600 dark:text-primary-400" />
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-4">
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <div className="flex items-center space-x-2 mb-2">
-                        <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
+                        <span className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full">
                           {project.category}
                         </span>
-                        <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm font-medium rounded-full">
+                        <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-medium rounded-full">
                           {project.status}
                         </span>
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
                         {project.title}
                       </h3>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
                     {project.description}
                   </p>
 
                   {/* Features */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <div className="mb-4">
+                    <h4 className="text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
                       Key Features:
                     </h4>
                     <ul className="space-y-1">
-                      {project.features.slice(0, 3).map((feature, idx) => (
-                        <li key={idx} className="text-sm text-slate-600 dark:text-slate-400 flex items-center">
-                          <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2"></span>
+                      {project.features.slice(0, 2).map((feature, idx) => (
+                        <li key={idx} className="text-xs text-slate-600 dark:text-slate-400 flex items-center">
+                          <span className="w-1 h-1 bg-primary-500 rounded-full mr-2"></span>
                           {feature}
                         </li>
                       ))}
-                      {project.features.length > 3 && (
-                        <li className="text-sm text-slate-500 dark:text-slate-500">
-                          +{project.features.length - 3} more features
+                      {project.features.length > 2 && (
+                        <li className="text-xs text-slate-500 dark:text-slate-500">
+                          +{project.features.length - 2} more features
                         </li>
                       )}
                     </ul>
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <div className="mb-4">
+                    <h4 className="text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
                       Technologies:
                     </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, idx) => (
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.slice(0, 4).map((tech, idx) => (
                         <span
                           key={idx}
                           className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-md"
@@ -228,16 +228,21 @@ const Projects = () => {
                           {tech}
                         </span>
                       ))}
+                      {project.technologies.length > 4 && (
+                        <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-500 text-xs rounded-md">
+                          +{project.technologies.length - 4}
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   {/* Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700">
-                    <div className="flex items-center space-x-2 text-sm text-slate-500 dark:text-slate-400">
-                      <Calendar className="w-4 h-4" />
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-200 dark:border-slate-700">
+                    <div className="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400">
+                      <Calendar className="w-3 h-3" />
                       <span>{project.date}</span>
                     </div>
-                    <div className="flex space-x-3">
+                    <div className="flex space-x-2">
                       {project.githubUrl && (
                         <motion.a
                           href={project.githubUrl}
@@ -245,9 +250,9 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
-                          className="p-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors duration-200"
+                          className="p-1.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors duration-200"
                         >
-                          <Github className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                          <Github className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                         </motion.a>
                       )}
                       {project.liveUrl && (
@@ -257,9 +262,9 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
-                          className="p-2 bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 rounded-lg transition-colors duration-200"
+                          className="p-1.5 bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 rounded-lg transition-colors duration-200"
                         >
-                          <ExternalLink className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                          <ExternalLink className="w-4 h-4 text-primary-600 dark:text-primary-400" />
                         </motion.a>
                       )}
                     </div>

@@ -4,14 +4,14 @@ import { GraduationCap, Briefcase, Trophy, Code2, Database, BarChart3, Brain } f
 const About = () => {
   const education = [
     {
-      institution: "R. C. Patel Institute of Technology",
-      degree: "Bachelor of Technology in AI & ML",
+      institution: "R. C. Patel Institute of Technology, Shirpur - An Autonomous Institute",
+      degree: "B.Tech in Artificial Intelligence and Machine Learning",
       period: "May 2022 - June 2026",
       grade: "CGPA: 7.8/10",
       location: "Shirpur, Maharashtra"
     },
     {
-      institution: "Shri S. L. Mali Junior College",
+      institution: "Shri S. L. Mali Junior College, Taloda",
       degree: "HSC",
       period: "May 2021 - March 2022",
       grade: "81.50%",
@@ -331,63 +331,19 @@ const About = () => {
                       <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                   </div>
-                </div>
-            </div>
+                    </div>
+                  </div>
             </motion.div>
           </motion.div>
         </motion.div>
 
 
-        {/* Education */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
-          >
-            Education
-          </motion.h2>
-          <div className="space-y-6">
-            {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <GraduationCap className="w-8 h-8 text-primary-600 dark:text-primary-400" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                      {edu.institution}
-                    </h3>
-                    <p className="text-lg text-primary-600 dark:text-primary-400 mb-2">
-                      {edu.degree}
-                    </p>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-slate-600 dark:text-slate-300">
-                      <span>{edu.period}</span>
-                      <span className="font-medium">{edu.grade}</span>
-                      <span>{edu.location}</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Experience */}
-        <motion.div
+                    <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+                      viewport={{ once: true }}
           className="mb-16"
         >
           <motion.h2 
@@ -429,6 +385,54 @@ const About = () => {
                       ) : (
                         <p>{exp.description}</p>
                       )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              ))}
+            </div>
+        </motion.div>
+
+        {/* Education */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <motion.h2 
+            variants={itemVariants}
+            className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+          >
+            Education
+          </motion.h2>
+          <div className="space-y-6">
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <GraduationCap className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      {edu.institution}
+                    </h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">
+                        {edu.period}
+                      </p>
+                    </div>
+                    <p className="text-lg text-primary-600 dark:text-primary-400 mb-2">
+                      {edu.degree}
+                    </p>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-slate-600 dark:text-slate-300">
+                      <span className="font-medium">{edu.grade}</span>
+                      <span>{edu.location}</span>
                     </div>
                   </div>
                 </div>

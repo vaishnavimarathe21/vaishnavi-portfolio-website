@@ -135,7 +135,7 @@ const Footer = () => {
             © {currentYear} Vaishnavi Marathe. All rights reserved.
           </p>
           <p className="text-slate-400 text-sm mt-2 sm:mt-0">
-            Built with React, TypeScript & Tailwind CSS
+            Built with ❤️ by Vaishnavi Marathe using React, TypeScript & Tailwind CSS
           </p>
         </div>
       </div>
