@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -59,6 +59,16 @@ type ContactFormData = z.infer<typeof contactSchema>
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    const scrollToTop = () => {
+      window.scrollTo(0, 0)
+    }
+    
+    // Use setTimeout to ensure DOM is ready
+    setTimeout(scrollToTop, 0)
+  }, [])
 
   const {
     register,
@@ -343,6 +353,8 @@ const Contact = () => {
                     {info.href ? (
                       <a
                         href={info.href}
+                        target={info.href.startsWith('mailto:') ? undefined : '_blank'}
+                        rel={info.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                         className="text-sm sm:text-base text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                       >
                         {info.value}

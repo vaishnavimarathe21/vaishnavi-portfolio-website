@@ -1,0 +1,214 @@
+---
+title: "Real-Time Height Measurement System"
+description: "Sophisticated computer vision-based height measurement system using laptop camera for real-time measurements. Built with Python FastAPI backend and React TypeScript frontend, featuring Google MediaPipe for 33 precise body landmarks."
+image: "/images/projects/Height-Measurement/HeightMeasurement.png"
+images: ["/images/projects/Height-Measurement/HeightMeasurement.png"]
+technologies: ["Python", "FastAPI", "React", "TypeScript", "MediaPipe", "OpenCV", "Kalman Filter", "WebSockets", "CUDA"]
+category: "Computer Vision"
+date: "2024-01-25"
+status: "Completed"
+githubUrl: "https://github.com/vaishnavimarathe21/Real-Time-Height-Measurement-System"
+liveUrl: null
+features: [
+  "±2cm measurement accuracy with 95%+ detection confidence",
+  "Real-time 30 FPS processing with <100ms latency",
+  "Smart auto-calibration using torso length with 40 samples",
+  "Kalman filter for data smoothing and noise reduction",
+  "Beautiful glassmorphism UI with responsive design",
+  "WebSocket API for real-time video processing",
+  "GPU acceleration with CUDA 11.7 support",
+  "Cross-platform compatibility across all major browsers"
+]
+---
+
+# Real-Time Height Measurement System
+
+## Project Overview
+
+A sophisticated computer vision-based height measurement system that uses your laptop camera to measure a person's height in real-time. Built with Python FastAPI backend and React TypeScript frontend, featuring Google MediaPipe for precise pose detection and beautiful glassmorphism UI.
+
+## Key Features
+
+### AI-Powered Detection
+- **Google MediaPipe** - 33 precise body landmarks detection
+- **Pose Estimation** - Real-time human pose tracking
+- **Landmark Accuracy** - 95%+ detection confidence
+- **Multi-person Support** - Can detect multiple people simultaneously
+
+### Smart Calibration System
+- **Auto-Calibration** - Uses torso length for reference
+- **40 Sample Collection** - Robust calibration with outlier filtering
+- **Dynamic Adjustment** - Adapts to different environments
+- **Calibration Validation** - Ensures measurement accuracy
+
+### Performance Metrics
+- **±2cm Accuracy** - Highly precise height measurements
+- **30 FPS Processing** - Real-time video processing
+- **<100ms Latency** - Near-instantaneous results
+- **GPU Acceleration** - CUDA 11.7 support for faster processing
+
+## Technical Architecture
+
+### Backend (Python FastAPI)
+- **FastAPI Framework** - Modern, fast web framework
+- **MediaPipe Integration** - Google's ML framework for pose detection
+- **OpenCV Processing** - Computer vision operations
+- **WebSocket Communication** - Real-time data streaming
+- **Kalman Filtering** - Data smoothing and noise reduction
+
+### Frontend (React TypeScript)
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type-safe development
+- **Styled Components** - CSS-in-JS styling
+- **WebRTC** - Camera access and video streaming
+- **Real-time Updates** - Live height display
+
+### AI/ML Components
+- **MediaPipe Pose** - 33-point human pose detection
+- **TensorFlow 2.10.1** - GPU-accelerated ML processing
+- **Kalman Filter** - State estimation and smoothing
+- **Computer Vision** - Image processing and analysis
+
+## System Requirements
+
+### Prerequisites
+- **Python 3.12.0+** (recommended) or Python 3.10.0+
+- **Node.js 16+** and npm
+- **CUDA 11.7** (optional, for GPU acceleration)
+- **Webcam** or built-in camera
+
+### Hardware Requirements
+- **CPU** - Multi-core processor recommended
+- **RAM** - 8GB+ recommended
+- **GPU** - NVIDIA GPU with CUDA support (optional)
+- **Camera** - HD webcam or built-in camera
+
+## Installation & Setup
+
+### Backend Setup
+```bash
+# Clone repository
+git clone https://github.com/vaishnavimarathe21/Real-Time-Height-Measurement-System.git
+cd Real-Time-Height-Measurement-System
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Start backend server
+cd backend
+python main.py
+```
+
+### Frontend Setup
+```bash
+# Install Node.js dependencies
+cd frontend
+npm install
+
+# Start development server
+npm start
+```
+
+### GPU Acceleration Setup
+```bash
+# Verify CUDA installation
+python -c "import tensorflow as tf; print('GPU Available:', tf.config.list_physical_devices('GPU'))"
+
+# Install CUDA-compatible TensorFlow
+pip install tensorflow-gpu==2.10.1
+```
+
+## Usage Guide
+
+### Auto-Calibration Process
+1. **Stand in Front of Camera** - Ensure full body visibility
+2. **Position Correctly** - Shoulders and hips clearly visible
+3. **Stay Still** - Allow system to collect 40 calibration samples
+4. **Wait for Completion** - Progress indicator shows calibration status
+5. **Ready to Measure** - System calibrated and ready for use
+
+### Height Measurement
+1. **Position Yourself** - Stand 2-3 meters from camera
+2. **Ensure Good Lighting** - Well-lit environment for better detection
+3. **Stand Straight** - Maintain upright posture against plain background
+4. **Wait for Landmarks** - Colored dots and lines indicate pose detection
+5. **View Results** - Real-time height display with confidence score
+
+## Technical Implementation
+
+### Pose Detection Pipeline
+1. **Video Capture** - WebRTC camera access
+2. **Frame Processing** - OpenCV image preprocessing
+3. **Pose Estimation** - MediaPipe landmark detection
+4. **Height Calculation** - Geometric calculations from landmarks
+5. **Data Smoothing** - Kalman filter for stable measurements
+6. **Real-time Display** - WebSocket communication to frontend
+
+### Calibration Algorithm
+- **Torso Length Reference** - Uses average adult torso length (50cm)
+- **Sample Collection** - Gathers 40 calibration samples
+- **Outlier Filtering** - Removes 10% of extreme values
+- **Confidence Threshold** - Requires 70% confidence for detection
+- **Dynamic Adjustment** - Adapts to individual body proportions
+
+### Performance Optimization
+- **GPU Acceleration** - CUDA support for faster processing
+- **Frame Skipping** - Optimized processing for real-time performance
+- **Memory Management** - Efficient memory usage for video processing
+- **WebSocket Optimization** - Minimal data transfer for real-time updates
+
+## Accuracy & Performance
+
+### Measurement Accuracy
+- **±2cm Precision** - Highly accurate height measurements
+- **95%+ Confidence** - Reliable pose detection
+- **Height Range** - Supports 120-220cm height range
+- **Environmental Adaptation** - Works in various lighting conditions
+
+### Performance Metrics
+- **30 FPS Processing** - Smooth real-time video processing
+- **<100ms Latency** - Near-instantaneous measurement results
+- **Memory Usage** - ~512MB RAM consumption
+- **CPU Usage** - Optimized for multi-core processors
+
+## User Interface
+
+### Design Features
+- **Glassmorphism UI** - Modern, translucent design elements
+- **Responsive Layout** - Works on all screen sizes
+- **Real-time Feedback** - Live visual indicators and progress bars
+- **Intuitive Controls** - Easy-to-use interface for all users
+
+### Visual Elements
+- **Pose Landmarks** - Colored dots and lines showing detected pose
+- **Height Display** - Large, clear height measurement
+- **Confidence Indicator** - Real-time confidence score
+- **Calibration Progress** - Visual progress bar during calibration
+
+## Troubleshooting
+
+### Common Issues
+- **Camera Not Working** - Check browser permissions and camera access
+- **Low Detection Accuracy** - Improve lighting and background conditions
+- **WebSocket Connection Failed** - Verify backend server is running
+- **GPU Not Detected** - Check CUDA installation and TensorFlow setup
+
+### Performance Optimization
+- **Close Other Applications** - Free up system resources
+- **Use Plain Background** - Avoid cluttered backgrounds
+- **Ensure Good Lighting** - Use adequate lighting for better detection
+- **Update Drivers** - Keep GPU drivers up to date
+
+## Future Enhancements
+
+### Planned Features
+- **Multi-person Detection** - Measure multiple people simultaneously
+- **Mobile App** - Native mobile application
+- **Cloud Processing** - Server-side processing for better performance
+- **Advanced Analytics** - Historical measurement tracking
+
+### Technical Improvements
+- **Machine Learning Models** - Custom-trained models for better accuracy
+- **Edge Computing** - Optimized for edge devices
+- **Real-time Streaming** - Live video streaming capabilities
+- **API Integration** - RESTful API for third-party integrations

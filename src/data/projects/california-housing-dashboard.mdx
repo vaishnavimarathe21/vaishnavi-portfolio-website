@@ -1,0 +1,107 @@
+---
+title: "California Housing Dashboard"
+description: "Advanced interactive dashboard for California housing price prediction using linear regression and its variants. Features multiple ML models (Linear, Polynomial, Ridge, Lasso), geospatial visualizations, SHAP explanations, and modern Streamlit UI with glassmorphism design."
+image: null
+images: []
+technologies: ["Python", "Streamlit", "Pandas", "NumPy", "Scikit-learn", "SHAP", "Plotly", "Matplotlib"]
+category: "Data Science"
+date: "2024-01-15"
+status: "Completed"
+githubUrl: "https://github.com/vaishnavimarathe21/California-Housing-Dashboard"
+liveUrl: null
+features: [
+  "Multiple regression models with hyperparameter tuning",
+  "Interactive geospatial maps and partial dependence plots",
+  "SHAP explanations for model interpretability",
+  "Feature engineering with region clustering and interaction terms",
+  "Model persistence and downloadable predictions/coefficients",
+  "Modern UI with gradient backgrounds and card layouts",
+  "Custom data upload for prediction and live model comparison"
+]
+---
+
+# California Housing Dashboard
+
+## Project Overview
+
+This project is an advanced, interactive dashboard for California housing price prediction using linear regression and its variants. It features a Streamlit web app with rich visualizations, model comparison, feature engineering, and explainability.
+
+## Key Features
+
+### Multiple Regression Models
+- **Linear Regression** - Basic linear model for baseline predictions
+- **Polynomial Regression** - Captures non-linear relationships
+- **Ridge Regression** - L2 regularization to prevent overfitting
+- **Lasso Regression** - L1 regularization with feature selection
+
+### Advanced Visualizations
+- **Geospatial Maps** - Interactive maps showing predictions and errors across California
+- **Partial Dependence Plots (PDP)** - Shows how individual features affect predictions
+- **Feature Importance** - Coefficient analysis and SHAP explanations
+- **Residuals Analysis** - Loss curves and correlation heatmaps
+
+### User Experience
+- **Downloadable Predictions** - Export model results and coefficients
+- **Custom Data Upload** - Upload your own data for predictions
+- **Live Model Comparison** - Side-by-side model performance comparison
+- **Modern UI** - Glassmorphism design with gradient backgrounds
+
+## Technical Implementation
+
+### Data Processing
+- **Feature Engineering** - Region clustering and interaction terms
+- **Outlier Removal** - Statistical methods for data cleaning
+- **Data Validation** - Input validation and error handling
+
+### Model Performance
+- **Hyperparameter Tuning** - Grid search and cross-validation
+- **Model Persistence** - Save and load trained models
+- **Performance Metrics** - RMSE, MAE, R² score evaluation
+
+### Deployment
+- **Streamlit Cloud** - Ready for cloud deployment
+- **Hugging Face Spaces** - Alternative deployment option
+- **Local Development** - Easy setup and running
+
+## Technologies Used
+
+- **Python 3.8+** - Core programming language
+- **Streamlit** - Web application framework
+- **Pandas & NumPy** - Data manipulation and analysis
+- **Scikit-learn** - Machine learning algorithms
+- **SHAP** - Model interpretability and explanations
+- **Plotly** - Interactive visualizations
+- **Matplotlib** - Static plotting and charts
+
+## Getting Started
+
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
+
+### Installation
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Place `housing.csv` in the project directory
+4. Run the app: `streamlit run app.py`
+
+### Usage
+1. **Model Selection** - Choose from Linear, Polynomial, Ridge, or Lasso
+2. **Parameter Tuning** - Adjust hyperparameters for optimal performance
+3. **Data Upload** - Upload custom data for predictions
+4. **Visualization** - Explore geospatial maps and feature importance
+5. **Export Results** - Download predictions and model coefficients
+
+## Project Impact
+
+This dashboard demonstrates advanced machine learning techniques for real estate price prediction, showcasing:
+- **Model Interpretability** - Understanding how features influence predictions
+- **Interactive Visualization** - Making complex data accessible
+- **Production-Ready Code** - Clean, maintainable, and deployable solution
+
+## Future Enhancements
+
+- **Additional Models** - Random Forest, XGBoost, Neural Networks
+- **Real-time Data** - Integration with live housing market APIs
+- **Advanced Features** - Time series analysis, market trends
+- **Mobile Optimization** - Responsive design for mobile devices

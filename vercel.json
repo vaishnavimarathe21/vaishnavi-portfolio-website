@@ -2,6 +2,12 @@
   "functions": {
     "api/submit-form/index.ts": {
       "runtime": "nodejs18.x"
+    },
+    "api/projects/index.ts": {
+      "runtime": "nodejs18.x"
+    },
+    "api/projects/[slug]/index.ts": {
+      "runtime": "nodejs18.x"
     }
   },
   "rewrites": [
@@ -9,5 +15,8 @@
       "source": "/api/(.*)",
       "destination": "/api/$1"
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
 }

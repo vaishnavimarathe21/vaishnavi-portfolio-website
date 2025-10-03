@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion'
 import { GraduationCap, Briefcase, Trophy, Code2, Database, BarChart3, Brain } from 'lucide-react'
+import { useEffect } from 'react'
 
 const About = () => {
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0)
+  }, [])
   const education = [
     {
       institution: "R. C. Patel Institute of Technology, Shirpur - An Autonomous Institute",
@@ -47,14 +52,6 @@ const About = () => {
     }
   ]
 
-  const skills = [
-    { name: "Python", level: 90, icon: Code2, color: "bg-blue-500" },
-    { name: "SQL", level: 85, icon: Database, color: "bg-green-500" },
-    { name: "Data Analysis", level: 80, icon: BarChart3, color: "bg-purple-500" },
-    { name: "Machine Learning", level: 75, icon: Brain, color: "bg-pink-500" },
-    { name: "Tableau", level: 70, icon: BarChart3, color: "bg-orange-500" },
-    { name: "Java", level: 75, icon: Code2, color: "bg-red-500" },
-  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },

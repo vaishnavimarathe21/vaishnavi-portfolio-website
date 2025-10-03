@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test YAML Parser</title>
+</head>
+<body>
+    <h1>Test YAML Parser</h1>
+    <div id="output"></div>
+    
+    <script>
+        // Simple YAML parser for frontmatter
+        function parseYAML(yamlText) {
+          const result = {}
+          const lines = yamlText.split('\n')
+          let currentKey = ''
+          let inArray = false
+          let arrayItems = []
+          
+          for (const line of lines) {
+            const trimmed = line.trim()
+            
+            if (trimmed === '') continue
+            
+            if (trimmed.startsWith('- ')) {
+              // Array item
+              if (!inArray) {
+                inArray = true
+                arrayItems = []
+              }
+              arrayItems.push(trimmed.substring(2).replace(/^["']|["']$/g, ''))
+            } else if (trimmed.includes(':')) {
+              // New key-value pair
+              if (inArray && currentKey) {
+                result[currentKey] = arrayItems
+                inArray = false
+                arrayItems = []
+              }
+              
+              const [key, ...valueParts] = trimmed.split(':')
+              currentKey = key.trim()
+              const value = valueParts.join(':').trim()
+              
+              if (value === 'null') {
+                result[currentKey] = null
+              } else if (value === 'true') {
+                result[currentKey] = true
+              } else if (value === 'false') {
+                result[currentKey] = false
+              } else if (value.startsWith('[') && value.endsWith(']')) {
+                // Handle inline arrays like ["item1", "item2"]
+                const arrayContent = value.slice(1, -1)
+                result[currentKey] = arrayContent.split(',').map(item => 
+                  item.trim().replace(/^["']|["']$/g, '')
+                )
+              } else if (value === '[') {
+                // Start of multi-line array
+                inArray = true
+                arrayItems = []
+              } else {
+                result[currentKey] = value.replace(/^["']|["']$/g, '')
+              }
+            }
+          }
+          
+          // Handle last array if we were in array mode
+          if (inArray && currentKey) {
+            result[currentKey] = arrayItems
+          }
+          
+          return result
+        }
+        
+        // Test with sample frontmatter
+        const testYAML = `title: "California Housing Dashboard"
+description: "Advanced interactive dashboard for California housing price prediction using linear regression and its variants. Features multiple ML models (Linear, Polynomial, Ridge, Lasso), geospatial visualizations, SHAP explanations, and modern Streamlit UI with glassmorphism design."
+image: null
+technologies: ["Python", "Streamlit", "Pandas", "NumPy", "Scikit-learn", "SHAP", "Plotly", "Matplotlib"]
+category: "Data Science"
+date: "2024"
+status: "Completed"
+githubUrl: "https://github.com/vaishnavimarathe21/California-Housing-Dashboard"
+liveUrl: null
+features: [
+  "Multiple regression models with hyperparameter tuning",
+  "Interactive geospatial maps and partial dependence plots",
+  "SHAP explanations for model interpretability",
+  "Feature engineering with region clustering and interaction terms",
+  "Model persistence and downloadable predictions/coefficients",
+  "Modern UI with gradient backgrounds and card layouts",
+  "Custom data upload for prediction and live model comparison"
+]`
+        
+        try {
+            const result = parseYAML(testYAML)
+            console.log('Parsed result:', result)
+            
+            document.getElementById('output').innerHTML = `
+                <h2>Parsing Results:</h2>
+                <h3>Title:</h3>
+                <p>${result.title}</p>
+                <h3>Technologies (${result.technologies ? result.technologies.length : 0} items):</h3>
+                <ul>
+                    ${result.technologies ? result.technologies.map(tech => `<li>${tech}</li>`).join('') : '<li>No technologies found</li>'}
+                </ul>
+                <h3>Features (${result.features ? result.features.length : 0} items):</h3>
+                <ul>
+                    ${result.features ? result.features.map(feature => `<li>${feature}</li>`).join('') : '<li>No features found</li>'}
+                </ul>
+                <h3>Raw Result:</h3>
+                <pre>${JSON.stringify(result, null, 2)}</pre>
+            `
+        } catch (error) {
+            document.getElementById('output').innerHTML = `<h2>Error:</h2><p>${error.message}</p>`
+        }
+    </script>
+</body>
+</html>

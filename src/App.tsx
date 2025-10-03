@@ -6,10 +6,18 @@ import ScrollToTopButton from './components/ScrollToTopButton.tsx'
 import Home from './pages/Home.tsx'
 import About from './pages/About.tsx'
 import Projects from './pages/Projects.tsx'
+import ProjectDetail from './pages/ProjectDetail.tsx'
 import Contact from './pages/Contact.tsx'
 import Developer from './pages/Developer.tsx'
 
 function App() {
+  useEffect(() => {
+    // Disable browser scroll restoration to prevent it from interfering
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+  }, [])
+
   return (
     <Router>
       <ScrollToTop />
@@ -20,6 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/developer" element={<Developer />} />
           </Routes>
@@ -36,7 +45,16 @@ function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // Scroll to top when route changes
+    const scrollToTop = () => {
+      window.scrollTo(0, 0)
+    }
+    
+    // Use setTimeout to ensure DOM is ready and override any browser scroll restoration
+    setTimeout(scrollToTop, 0)
+    
+    // Also try again after a short delay to ensure it works
+    setTimeout(scrollToTop, 100)
   }, [pathname])
 
   return null
