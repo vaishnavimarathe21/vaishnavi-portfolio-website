@@ -107,7 +107,7 @@ const Home = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 md:pt-8">
+      <section className="min-h-[70vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 md:pt-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
