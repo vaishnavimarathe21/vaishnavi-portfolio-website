@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website showcasing my journey as an AIML enthusiast, competitive programmer, and data science student. Built with React, TypeScript, and Tailwind CSS.
 
+🌐 **Live Website:** [https://vaishnavimarathe.vercel.app](https://vaishnavimarathe.vercel.app)
+
 ## 🌟 Features
 
 ### 🎨 Modern Design
@@ -9,6 +11,7 @@ A modern, responsive portfolio website showcasing my journey as an AIML enthusia
 - **Dark/Light Mode** - Toggle between themes with smooth transitions
 - **Smooth Animations** - Framer Motion powered animations throughout
 - **Professional UI** - Clean, modern interface with excellent UX
+- **Mobile-First Approach** - Fully optimized for mobile devices
 
 ### 📱 Pages & Sections
 
@@ -28,6 +31,7 @@ A modern, responsive portfolio website showcasing my journey as an AIML enthusia
   - GitHub and live demo links
   - Status indicators and completion dates
 - **Responsive Grid** - Adaptive layout for different screen sizes
+- **Detailed Project Views** - Comprehensive project documentation with MDX content
 
 #### 👤 About Page
 - **Personal Story** - Detailed background and journey
@@ -46,12 +50,22 @@ A modern, responsive portfolio website showcasing my journey as an AIML enthusia
 ## 🛠️ Technology Stack
 
 ### Frontend
-- **React 18** - Modern React with hooks and functional components
+- **React 19** - Modern React with hooks and functional components
 - **TypeScript** - Type-safe development with excellent IntelliSense
 - **Vite** - Fast build tool and development server
 - **Tailwind CSS** - Utility-first CSS framework for rapid styling
 - **Framer Motion** - Smooth animations and transitions
 - **React Router** - Client-side routing for SPA experience
+
+### Content Management
+- **MDX** - Markdown with JSX for rich project documentation
+- **Gray Matter** - Frontmatter parsing for project metadata
+- **Markdown-to-JSX** - Client-side markdown rendering
+
+### Forms & Validation
+- **React Hook Form** - Performant form handling
+- **Zod** - TypeScript-first schema validation
+- **Hookform Resolvers** - Validation integration
 
 ### Icons & Assets
 - **Lucide React** - Beautiful, customizable icons
@@ -61,6 +75,13 @@ A modern, responsive portfolio website showcasing my journey as an AIML enthusia
 - **ESLint** - Code linting and quality assurance
 - **PostCSS** - CSS processing and optimization
 - **TypeScript Config** - Strict type checking and modern JS features
+- **Terser** - Advanced JavaScript minification
+
+### Performance & Analytics
+- **Vercel Analytics** - Website analytics and insights
+- **Vercel Speed Insights** - Performance monitoring
+- **Code Splitting** - Lazy loading for optimal performance
+- **Bundle Optimization** - Manual chunking for better caching
 
 ## 🚀 Getting Started
 
@@ -118,28 +139,40 @@ vaishnavi-portfolio-website/
 │   ├── components/
 │   │   ├── Header.tsx          # Navigation header
 │   │   ├── Footer.tsx          # Site footer
-│   │   └── ScrollToTopButton.tsx # Scroll to top functionality
+│   │   ├── ScrollToTopButton.tsx # Scroll to top functionality
+│   │   └── MDXContentRenderer.tsx # MDX content rendering
 │   ├── pages/
 │   │   ├── Home.tsx            # Homepage with all sections
 │   │   ├── About.tsx           # About page
 │   │   ├── Projects.tsx        # Projects showcase
+│   │   ├── ProjectDetail.tsx   # Individual project details
 │   │   ├── Contact.tsx         # Contact form
 │   │   └── Developer.tsx       # Developer profile (blank)
-│   ├── hooks/
-│   │   └── useCodeChefData.ts  # CodeChef API integration
-│   ├── data/                   # Static data files
-│   ├── utils/                  # Utility functions
-│   ├── App.tsx                 # Main app component
+│   ├── data/
+│   │   └── projects/           # MDX project files
+│   │       ├── california-housing-dashboard.mdx
+│   │       ├── aws-cloud-data-pipeline.mdx
+│   │       └── real-time-height-measurement.mdx
+│   ├── utils/
+│   │   └── loadProjects.ts     # Project data loading utilities
+│   ├── types/
+│   │   └── mdx.d.ts            # MDX type definitions
+│   ├── App.tsx                 # Main app component with lazy loading
 │   ├── main.tsx                # App entry point
 │   └── index.css               # Global styles
 ├── api/
+│   ├── projects/
+│   │   ├── index.ts            # Projects API endpoint
+│   │   └── [slug]/
+│   │       └── index.ts        # Individual project API endpoint
 │   └── submit-form/
 │       └── index.ts            # Contact form API endpoint
 ├── package.json                # Dependencies and scripts
 ├── tailwind.config.js          # Tailwind CSS configuration
 ├── tsconfig.json               # TypeScript configuration
-├── vite.config.ts              # Vite configuration
-└── vercel.json                 # Vercel deployment config
+├── vite.config.ts              # Vite configuration with optimization
+├── vercel.json                 # Vercel deployment config
+└── env.example                  # Environment variables template
 ```
 
 ## 🎯 Key Features Explained
@@ -148,16 +181,26 @@ vaishnavi-portfolio-website/
 - **CodeChef Integration** - Live data fetching from CodeChef API
 - **Animated Typing Effect** - Dynamic skill display on homepage
 - **Interactive Filtering** - Real-time project filtering by category
+- **MDX Project Documentation** - Rich content with frontmatter metadata
 
 ### 📱 Responsive Design
 - **Mobile-First Approach** - Optimized for mobile devices
 - **Flexible Grid System** - Adaptive layouts for all screen sizes
 - **Touch-Friendly Interface** - Optimized for touch interactions
+- **Progressive Enhancement** - Works on all devices
 
 ### ⚡ Performance Optimizations
-- **Code Splitting** - Efficient bundle loading
+- **Code Splitting** - Lazy loading with React.lazy() and Suspense
+- **Bundle Optimization** - Manual chunking for better caching
 - **Image Optimization** - Optimized images and lazy loading
 - **Smooth Animations** - Hardware-accelerated transitions
+- **Tree Shaking** - Unused code elimination
+
+### 🔒 Security Features
+- **Right-Click Protection** - Disabled context menu across the site
+- **Image Protection** - Disabled drag, drop, and save on profile images
+- **Form Validation** - Client and server-side validation
+- **XSS Protection** - Sanitized user inputs
 
 ## 🚀 Deployment
 
@@ -166,6 +209,7 @@ vaishnavi-portfolio-website/
 2. Configure build settings:
    - Build Command: `npm run build`
    - Output Directory: `dist`
+   - Framework: `Vite`
 3. Deploy automatically on every push to main branch
 
 ### Other Platforms
@@ -176,9 +220,22 @@ vaishnavi-portfolio-website/
 ## 🎨 Customization
 
 ### Adding New Projects
-1. Edit `src/pages/Projects.tsx`
-2. Add new project object to the `projects` array
-3. Include: title, description, technologies, features, links, category, date, status
+1. Create a new `.mdx` file in `src/data/projects/`
+2. Add frontmatter with project metadata:
+   ```yaml
+   ---
+   title: "Project Title"
+   description: "Project description"
+   technologies: ["Tech1", "Tech2"]
+   category: "Data Science"
+   date: "2024-01-01"
+   status: "Completed"
+   githubUrl: "https://github.com/username/repo"
+   liveUrl: "https://project-url.com"
+   features: ["Feature 1", "Feature 2"]
+   ---
+   ```
+3. Add project content in markdown format
 
 ### Updating Personal Information
 1. **Homepage**: Edit `src/pages/Home.tsx`
@@ -202,6 +259,11 @@ vaishnavi-portfolio-website/
 - **Method**: POST
 - **Fields**: name, email, subject, message
 
+### Projects API
+- **Endpoint**: `/api/projects`
+- **Method**: GET
+- **Features**: Filtering, searching, pagination
+
 ## 🔧 Development Scripts
 
 ```bash
@@ -212,6 +274,22 @@ npm run preview      # Preview production build
 npm run lint         # Run ESLint
 npm run type-check   # Run TypeScript checks
 ```
+
+## 📊 Bundle Optimization
+
+The project uses advanced optimization techniques:
+
+- **Code Splitting**: Pages load on-demand
+- **Manual Chunking**: Vendor libraries separated
+- **Tree Shaking**: Unused code elimination
+- **Minification**: Terser with advanced options
+- **Gzip Compression**: Automatic compression
+
+**Bundle Sizes:**
+- Main App: 196.84 kB (62.25 kB gzipped)
+- React Vendor: 42.43 kB (15.01 kB gzipped)
+- Framer Motion: 115.84 kB (37.17 kB gzipped)
+- Individual Pages: 0.30-19.22 kB each
 
 ## 📝 License
 
@@ -227,11 +305,30 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-**Vaishnavi Marathe**
-- 📧 Email: [Your Email]
-- 💼 LinkedIn: [Your LinkedIn]
-- 🐙 GitHub: [@vaishnavimarathe21](https://github.com/vaishnavimarathe21)
-- 🏆 CodeChef: [rcp_221107017](https://www.codechef.com/users/rcp_221107017)
+**Vaishnavi Narottam Marathe**
+- 📧 **Email:** [marathekhushi6@gmail.com](mailto:marathekhushi6@gmail.com)
+- 💼 **LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/in/vmarathe21)
+- 🐙 **GitHub:** [@vaishnavimarathe21](https://github.com/vaishnavimarathe21)
+- 🏆 **CodeChef:** [rcp_221107017](https://www.codechef.com/users/rcp_221107017)
+
+## 🎓 Education & Experience
+
+### Education
+- **B.Tech in Artificial Intelligence and Machine Learning**
+  - R. C. Patel Institute of Technology, Shirpur (May 2022 - June 2026)
+  - CGPA: 7.8/10
+- **HSC** - Shri S. L. Mali Junior College, Taloda (May 2021 - March 2022)
+  - Grade: 81.50%
+
+### Experience
+- **Industrial Training and Internship** at R3 Systems India Private Limited
+  - Period: July 2024 - August 2024
+  - Focus: Core Java and Advanced Java technologies
+  - Project: Child Vaccination Reminder System
+
+### Achievements
+- **Smart India Hackathon 2024** - Core team member for Krushi Tech (Mobile App for Direct Market Access for Farmers)
+- **She Inspires Women Hackathon (Finalist)** - AI-Powered E-Learning Platform using AWS PartyRock
 
 ## 🙏 Acknowledgments
 
@@ -240,6 +337,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Framer Motion** - For smooth animations
 - **Vite** - For the fast build tool
 - **Lucide** - For beautiful icons
+- **Vercel** - For seamless deployment and analytics
 
 ---
 
