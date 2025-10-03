@@ -10,6 +10,25 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global right-click protection */
+* {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-select: none !important;
+}
+
+/* Allow text selection for input fields and text areas */
+input, textarea, [contenteditable="true"] {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   html {
@@ -26,9 +45,9 @@ html {
   display: none;  /* Safari and Chrome */
 }
 
-/* Security measures for images */
-img[src*="avatar.jpg"], 
-img[src*="avatar.jpeg"], 
+/* Enhanced security measures for images */
+img[src*="avatar.jpg"],
+img[src*="avatar.jpeg"],
 img[src*="avatar.png"] {
   user-select: none !important;
   -webkit-user-select: none !important;
@@ -38,8 +57,33 @@ img[src*="avatar.png"] {
   -webkit-touch-callout: none !important;
   -khtml-user-select: none !important;
   pointer-events: none !important;
-  filter: blur(0.3px) !important;
-  image-rendering: optimizeQuality !important;
+  filter: blur(1px) contrast(1.2) brightness(1.1) saturate(1.1) !important;
+  image-rendering: auto !important;
+  transform: scale(1.001) !important;
+  position: relative !important;
+}
+
+/* Add watermark to avatar images */
+img[src*="avatar.jpg"]::after,
+img[src*="avatar.jpeg"]::after,
+img[src*="avatar.png"]::after {
+  content: "PROTECTED" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) rotate(-45deg) !important;
+  color: rgba(255, 0, 0, 0.4) !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  font-family: Arial, sans-serif !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  z-index: 1000 !important;
+  white-space: nowrap !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
 }
 
 /* Prevent screenshots on mobile devices */
@@ -64,6 +108,24 @@ img[src*="avatar.png"] {
   -webkit-touch-callout: none !important;
   -webkit-user-drag: none !important;
   -khtml-user-select: none !important;
+}
+
+/* Canvas protection */
+canvas {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-select: none !important;
+  pointer-events: none !important;
+}
+
+/* Prevent canvas saving */
+canvas[data-protected="true"] {
+  filter: blur(0.5px) contrast(1.1) !important;
+  image-rendering: auto !important;
 }
 
 .secure-image-container::before {
