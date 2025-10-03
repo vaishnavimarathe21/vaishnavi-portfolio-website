@@ -1,16 +1,28 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, Suspense, lazy } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import Header from './components/Header.tsx'
 import Footer from './components/Footer.tsx'
 import ScrollToTopButton from './components/ScrollToTopButton.tsx'
-import Home from './pages/Home.tsx'
-import About from './pages/About.tsx'
-import Projects from './pages/Projects.tsx'
-import ProjectDetail from './pages/ProjectDetail.tsx'
-import Contact from './pages/Contact.tsx'
-import Developer from './pages/Developer.tsx'
+
+// Lazy load pages for better performance
+const Home = lazy(() => import('./pages/Home.tsx'))
+const About = lazy(() => import('./pages/About.tsx'))
+const Projects = lazy(() => import('./pages/Projects.tsx'))
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail.tsx'))
+const Contact = lazy(() => import('./pages/Contact.tsx'))
+const Developer = lazy(() => import('./pages/Developer.tsx'))
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+      <p className="text-slate-600 dark:text-slate-300">Loading...</p>
+    </div>
+  </div>
+)
 
 function App() {
   useEffect(() => {
@@ -34,26 +46,28 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
-        <Header />
-        <main className="relative">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:slug" element={<ProjectDetail />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/developer" element={<Developer />} />
-          </Routes>
-        </main>
-        <Footer />
-        <ScrollToTopButton />
-        <Analytics />
-        <SpeedInsights />
-      </div>
-    </Router>
+        <Router>
+          <ScrollToTop />
+          <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+            <Header />
+            <main className="relative">
+              <Suspense fallback={<LoadingSpinner />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/projects/:slug" element={<ProjectDetail />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/developer" element={<Developer />} />
+                </Routes>
+              </Suspense>
+            </main>
+            <Footer />
+            <ScrollToTopButton />
+            <Analytics />
+            <SpeedInsights />
+          </div>
+        </Router>
   )
 }
 

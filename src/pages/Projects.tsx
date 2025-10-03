@@ -101,13 +101,13 @@ const Projects = () => {
         >
           <motion.h1 
             variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 px-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 px-4"
           >
             My Projects
           </motion.h1>
           <motion.p 
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4"
           >
             Explore my portfolio of data analysis, machine learning, and computer vision projects
           </motion.p>
@@ -118,7 +118,7 @@ const Projects = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 px-4"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12 px-4"
         >
           {categories.map((category) => {
             const Icon = getCategoryIcon(category)
@@ -130,18 +130,18 @@ const Projects = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory(category)}
-                className={`flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border ${
+                className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border ${
                   isActive 
                     ? 'bg-primary-500 text-white border-primary-500 shadow-lg' 
                     : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700'
                 }`}
               >
-                <Icon className={`w-5 h-5 ${
+                <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${
                   isActive 
                     ? 'text-white' 
                     : 'text-primary-600 dark:text-primary-400'
                 }`} />
-                <span className={`font-medium ${
+                <span className={`text-sm sm:text-base font-medium ${
                   isActive 
                     ? 'text-white' 
                     : 'text-slate-700 dark:text-slate-300'
@@ -174,7 +174,7 @@ const Projects = () => {
           variants={containerVariants}
           initial="hidden"
             animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6"
         >
             {filteredProjects.map((project) => {
             const CategoryIcon = getCategoryIcon(project.category)
@@ -240,7 +240,7 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-4">
+                <div className="p-3 sm:p-4">
                   {/* Header */}
                   <div className="mb-3">
                     <div className="flex items-center justify-between mb-2">
@@ -252,13 +252,13 @@ const Projects = () => {
                         <span>{project.date}</span>
                       </div>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                       {project.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm line-clamp-2">
+                  <p className="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-xs sm:text-sm line-clamp-2">
                     {project.description}
                   </p>
 
@@ -307,17 +307,17 @@ const Projects = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex items-center justify-between pt-3 border-t border-slate-200 dark:border-slate-700">
-                    <div className="flex space-x-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-3 border-t border-slate-200 dark:border-slate-700 gap-2 sm:gap-0">
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                       <motion.div
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <Link
                           to={`/projects/${project.slug}`}
-                          className="flex items-center space-x-1.5 px-3 py-1.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors duration-200 group"
+                          className="flex items-center justify-center space-x-1.5 px-3 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors duration-200 group w-full sm:w-auto"
                         >
-                          <span className="text-xs font-medium">
+                          <span className="text-xs sm:text-sm font-medium">
                             View Details
                           </span>
                         </Link>
@@ -330,10 +330,10 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex items-center space-x-1.5 px-3 py-1.5 bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 rounded-lg transition-colors duration-200 group"
+                          className="flex items-center justify-center space-x-1.5 px-3 py-2 bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 rounded-lg transition-colors duration-200 group w-full sm:w-auto"
                         >
                           <Github className="w-4 h-4 text-white dark:text-gray-900 group-hover:text-gray-100 dark:group-hover:text-gray-800 transition-colors duration-200" />
-                          <span className="text-xs font-medium text-white dark:text-gray-900 group-hover:text-gray-100 dark:group-hover:text-gray-800 transition-colors duration-200">
+                          <span className="text-xs sm:text-sm font-medium text-white dark:text-gray-900 group-hover:text-gray-100 dark:group-hover:text-gray-800 transition-colors duration-200">
                             Code
                           </span>
                         </motion.a>
@@ -347,10 +347,10 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
-                        className="flex items-center space-x-1.5 px-3 py-1.5 bg-green-100 dark:bg-green-900 hover:bg-green-200 dark:hover:bg-green-800 rounded-lg transition-colors duration-200 group"
+                        className="flex items-center justify-center space-x-1.5 px-3 py-2 bg-green-100 dark:bg-green-900 hover:bg-green-200 dark:hover:bg-green-800 rounded-lg transition-colors duration-200 group w-full sm:w-auto mt-2 sm:mt-0"
                         >
                         <ExternalLink className="w-4 h-4 text-green-600 dark:text-green-400 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors duration-200" />
-                        <span className="text-xs font-medium text-green-600 dark:text-green-400 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors duration-200">
+                        <span className="text-xs sm:text-sm font-medium text-green-600 dark:text-green-400 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors duration-200">
                           Demo
                         </span>
                         </motion.a>
@@ -371,11 +371,11 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <motion.div variants={itemVariants} className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-6 sm:p-8 text-white mx-4">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">
+          <motion.div variants={itemVariants} className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-4 sm:p-6 md:p-8 text-white mx-4">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4">
               Interested in collaborating?
             </h3>
-            <p className="text-primary-100 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
+            <p className="text-primary-100 mb-4 sm:mb-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base">
               I'm always excited to work on new projects and explore innovative solutions. 
               Let's discuss how we can work together!
             </p>
@@ -383,7 +383,7 @@ const Projects = () => {
               href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-primary-50 transition-colors duration-200 text-sm sm:text-base"
+              className="inline-block w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-primary-50 transition-colors duration-200 text-sm sm:text-base text-center"
             >
               Get In Touch
             </motion.a>

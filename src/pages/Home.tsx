@@ -138,7 +138,7 @@ const Home = () => {
 
           <motion.h1 
             variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 px-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 px-4"
           >
             Hi, I'm{' '}
             <span className="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
@@ -148,7 +148,7 @@ const Home = () => {
 
           <motion.div 
             variants={itemVariants}
-            className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 max-w-3xl mx-auto leading-relaxed min-h-[2rem] flex items-center justify-center px-4"
+            className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed min-h-[2rem] flex items-center justify-center px-4"
           >
             <div className="text-center">
               <span className="text-slate-700 dark:text-slate-300 font-medium">I Specialize in: </span>
@@ -161,17 +161,17 @@ const Home = () => {
 
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4"
           >
             <Link
               to="/projects"
-              className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl text-center"
             >
               View My Work
             </Link>
             <Link
               to="/contact"
-              className="px-8 py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white rounded-lg font-medium transition-all duration-200"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white rounded-lg font-medium transition-all duration-200 text-center"
             >
               Get In Touch
             </Link>
@@ -180,7 +180,7 @@ const Home = () => {
           {/* Skills Icons */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-16 px-4"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-12 sm:mb-16 px-4"
           >
             {skillsIcons.map((skill, index) => (
               <motion.div
@@ -189,10 +189,10 @@ const Home = () => {
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="flex flex-col items-center space-y-2 p-3 sm:p-4 rounded-lg bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="flex flex-col items-center space-y-1 sm:space-y-2 p-2 sm:p-3 md:p-4 rounded-lg bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
-                <skill.icon className={`w-8 h-8 ${skill.color}`} />
-                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <skill.icon className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${skill.color}`} />
+                <span className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 text-center">
                   {skill.name}
                 </span>
               </motion.div>
@@ -226,7 +226,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
           >
             {[
               { name: 'Python', icon: Code, color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900' },
@@ -238,9 +238,9 @@ const Home = () => {
               { name: 'Streamlit', icon: Calendar, color: 'text-red-500', bg: 'bg-red-50 dark:bg-red-900' },
               { name: 'OpenCV', icon: BookOpen, color: 'text-indigo-500', bg: 'bg-indigo-50 dark:bg-indigo-900' }
             ].map((skill, _index) => (
-              <div key={skill.name} className={`${skill.bg} p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-200`}>
-                <skill.icon className={`w-8 h-8 ${skill.color} mx-auto mb-3`} />
-                <h3 className="font-semibold text-slate-900 dark:text-white">{skill.name}</h3>
+              <div key={skill.name} className={`${skill.bg} p-3 sm:p-4 md:p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-200`}>
+                <skill.icon className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${skill.color} mx-auto mb-2 sm:mb-3`} />
+                <h3 className="text-xs sm:text-sm md:text-base font-semibold text-slate-900 dark:text-white">{skill.name}</h3>
               </div>
             ))}
           </motion.div>
@@ -310,7 +310,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="bg-slate-50 dark:bg-slate-700 rounded-lg p-6 shadow-sm"
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
               <div className="flex items-center space-x-3">
                 <img 
                   src="/images/codechef.jpeg" 
@@ -330,37 +330,37 @@ const Home = () => {
                 href="https://www.codechef.com/users/rcp_221107017"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition-colors duration-200"
+                className="w-full sm:w-auto px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition-colors duration-200 text-center"
               >
                 View Profile
               </a>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-white dark:bg-slate-800 rounded-lg">
-                <div className="text-xl font-bold text-orange-600 dark:text-orange-400">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+              <div className="text-center p-3 sm:p-4 bg-white dark:bg-slate-800 rounded-lg">
+                <div className="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : codechefData.rating}
                 </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Rating</div>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Rating</div>
               </div>
-              <div className="text-center p-4 bg-white dark:bg-slate-800 rounded-lg">
-                <div className="text-xl font-bold text-orange-600 dark:text-orange-400">
+              <div className="text-center p-3 sm:p-4 bg-white dark:bg-slate-800 rounded-lg">
+                <div className="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : codechefData.problemsSolved.toLocaleString()}
                 </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Problems</div>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Problems</div>
               </div>
-              <div className="text-center p-4 bg-white dark:bg-slate-800 rounded-lg">
-                <div className="text-xl font-bold text-orange-600 dark:text-orange-400">
+              <div className="text-center p-3 sm:p-4 bg-white dark:bg-slate-800 rounded-lg">
+                <div className="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : codechefData.contests}
                 </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Contests</div>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Contests</div>
               </div>
-              <div className="text-center p-4 bg-white dark:bg-slate-800 rounded-lg">
-                <div className="text-xl font-bold text-orange-600 dark:text-orange-400">
+              <div className="text-center p-3 sm:p-4 bg-white dark:bg-slate-800 rounded-lg">
+                <div className="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : `${codechefData.stars}★`}
                 </div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Stars</div>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Stars</div>
               </div>
             </div>
           </motion.div>
@@ -390,38 +390,38 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-sm"
+            className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 md:p-8 shadow-sm"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4">
                   AIML Enthusiast
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-4 sm:mb-6 leading-relaxed">
                   I'm a passionate data science student with a strong foundation in Python, SQL, and machine learning. 
                   I love turning complex data into meaningful insights and building solutions that make a difference.
                 </p>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-slate-600 dark:text-slate-300">Currently pursuing Artificial Intelligence and Machine Learning</span>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Currently pursuing Artificial Intelligence and Machine Learning</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-slate-600 dark:text-slate-300">Active in competitive programming</span>
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Active in competitive programming</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-slate-600 dark:text-slate-300">Building real-world projects</span>
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Building real-world projects</span>
                   </div>
                 </div>
               </div>
               <div className="text-center">
-                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-full flex items-center justify-center">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-full flex items-center justify-center">
                   <img 
                     src="/images/avatar.jpg" 
                     alt="Vaishnavi Marathe" 
-                    className="w-40 h-40 rounded-full object-cover"
+                    className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full object-cover"
                     onContextMenu={(e) => e.preventDefault()}
                     onDragStart={(e) => e.preventDefault()}
                     onDrag={(e) => e.preventDefault()}
@@ -453,23 +453,23 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">
               Ready to Work Together?
             </h2>
-            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-primary-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
               I'm always excited to collaborate on new projects and explore innovative solutions. 
               Let's discuss how we can work together!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 to="/projects"
-                className="px-8 py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-primary-50 transition-colors duration-200"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-primary-50 transition-colors duration-200 text-center"
               >
                 View My Projects
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary-600 rounded-lg font-medium transition-all duration-200"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary-600 rounded-lg font-medium transition-all duration-200 text-center"
               >
                 Get In Touch
               </Link>

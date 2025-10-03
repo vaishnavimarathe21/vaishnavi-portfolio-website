@@ -170,13 +170,13 @@ const Contact = () => {
         >
           <motion.h1 
             variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 px-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 px-4"
           >
             Get In Touch
           </motion.h1>
           <motion.p 
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4"
           >
             I'm always excited to discuss new opportunities, collaborate on projects, or answer any questions you might have
           </motion.p>
@@ -187,23 +187,23 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12"
         >
           {/* Contact Form */}
-          <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
+          <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4">
                 Send me a message
               </h2>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
                 Fill out the form below and I'll get back to you as soon as possible.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 sm:mb-2">
                   Name *
                 </label>
                 <input
@@ -222,7 +222,7 @@ const Contact = () => {
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 sm:mb-2">
                   Email *
                 </label>
                 <input
@@ -241,7 +241,7 @@ const Contact = () => {
 
               {/* Subject Field */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 sm:mb-2">
                   Subject *
                 </label>
                 <input
@@ -260,7 +260,7 @@ const Contact = () => {
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-1 sm:mb-2">
                   Message *
                 </label>
                 <textarea
@@ -324,30 +324,30 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
+          <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4">
                 Contact Information
               </h2>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
                 Feel free to reach out through any of these channels. I typically respond within 24 hours.
               </p>
             </div>
 
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ x: 5 }}
-                  className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+                  className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 p-2 sm:p-3 md:p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
-                      <info.icon className={`w-6 h-6 ${info.color}`} />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
+                      <info.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${info.color}`} />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white">
                       {info.title}
                     </h3>
                     {info.href ? (
@@ -370,11 +370,11 @@ const Contact = () => {
             </div>
 
             {/* Additional Info */}
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900 dark:to-primary-800 rounded-xl p-4 sm:p-6">
-              <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-3">
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900 dark:to-primary-800 rounded-xl p-3 sm:p-4 md:p-6">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white mb-2 sm:mb-3">
                 Let's Connect!
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+              <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300">
                 I'm always interested in discussing new opportunities, collaborating on projects, 
                 or simply having a conversation about Artificial Intelligence and technology. Feel free to reach out through any of the channels above!
               </p>

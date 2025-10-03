@@ -107,14 +107,14 @@ const About = () => {
             {/* Name and Title */}
           <motion.h1 
             variants={itemVariants}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 px-4"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4 px-4"
           >
               Vaishnavi Narottam Marathe
           </motion.h1>
             
           <motion.p 
             variants={itemVariants}
-              className="text-lg sm:text-xl md:text-2xl text-primary-600 dark:text-primary-400 mb-6 font-medium px-4"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 font-medium px-4"
           >
               Aspiring Machine Learning Engineer & AI/ML Student
           </motion.p>
@@ -124,10 +124,10 @@ const About = () => {
               variants={itemVariants}
               className="max-w-4xl mx-auto mb-12"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-6 text-center">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 text-center">
               My Journey
             </h2>
-              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed px-4">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6 text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed px-4">
                 <p>
               I'm a final-year B.Tech student specializing in Artificial Intelligence and Machine Learning 
               at R.C. Patel Institute of Technology. My passion lies in data analysis and transforming 
@@ -152,186 +152,186 @@ const About = () => {
               variants={itemVariants}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8 text-center">
               Technical Skills
             </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
                 {/* Programming Languages */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3">
                       <Code2 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                       Programming Languages
                     </h3>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Python</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Python</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">SQL</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">SQL</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">JavaScript</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">JavaScript</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">C++</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">C++</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Data Analysis & Visualization */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3">
                       <BarChart3 className="w-5 h-5 text-green-600 dark:text-green-400" />
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                       Data Analysis & Visualization
                     </h3>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Tableau</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Tableau</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Pandas</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Pandas</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">NumPy</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">NumPy</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Matplotlib</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Matplotlib</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Machine Learning & AI */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-3">
                       <Brain className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                       Machine Learning & AI
                     </h3>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Scikit-learn</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Scikit-learn</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">TensorFlow</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Beginner</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">TensorFlow</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Beginner</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">OpenCV</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">OpenCV</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">NLTK</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Beginner</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">NLTK</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Beginner</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Databases & Tools */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-3">
                       <Database className="w-5 h-5 text-orange-600 dark:text-orange-400" />
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                       Databases & Tools
                     </h3>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">MySQL</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">MySQL</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">PostgreSQL</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">PostgreSQL</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Git</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Git</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Jupyter</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Jupyter</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Web Development */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mr-3">
                       <Code2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                       Web Development
                     </h3>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">HTML/CSS</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">HTML/CSS</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">React</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">React</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Node.js</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Beginner</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Node.js</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Beginner</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Flask</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Flask</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Intermediate</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Soft Skills */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900 rounded-lg flex items-center justify-center mr-3">
                       <Trophy className="w-5 h-5 text-pink-600 dark:text-pink-400" />
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                       Soft Skills
                     </h3>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Problem Solving</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Problem Solving</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Team Collaboration</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Team Collaboration</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Communication</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Communication</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600 dark:text-slate-300">Critical Thinking</span>
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
+                      <span className="text-sm sm:text-base text-slate-600 dark:text-slate-300">Critical Thinking</span>
+                      <span className="text-xs sm:text-sm font-medium text-primary-600 dark:text-primary-400">Advanced</span>
                     </div>
                   </div>
                     </div>
@@ -351,7 +351,7 @@ const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8 text-center"
           >
             Experience
           </motion.h2>
@@ -360,7 +360,7 @@ const About = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
@@ -368,17 +368,17 @@ const About = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
-                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
+                      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 dark:text-white">
                         {exp.company}
                       </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium">
                         {exp.period}
                       </p>
                     </div>
-                    <p className="text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-4">
+                    <p className="text-sm sm:text-base md:text-lg text-primary-600 dark:text-primary-400 mb-3 sm:mb-4">
                       {exp.position}
                     </p>
-                    <div className="text-slate-600 dark:text-slate-300">
+                    <div className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
                       {Array.isArray(exp.description) ? (
                         <ul className="list-disc list-inside space-y-1">
                           {exp.description.map((item, idx) => (
@@ -406,7 +406,7 @@ const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8 text-center"
           >
             Education
           </motion.h2>
@@ -415,7 +415,7 @@ const About = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
@@ -423,17 +423,17 @@ const About = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
-                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
+                      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 dark:text-white">
                       {edu.institution}
                     </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium">
                         {edu.period}
                       </p>
                     </div>
-                    <p className="text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2">
+                    <p className="text-sm sm:text-base md:text-lg text-primary-600 dark:text-primary-400 mb-2">
                       {edu.degree}
                     </p>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-slate-600 dark:text-slate-300">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                       <span className="font-medium">{edu.grade}</span>
                       <span>{edu.location}</span>
                     </div>
@@ -454,29 +454,29 @@ const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8 text-center"
           >
             Achievements & Hackathons
           </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="bg-white dark:bg-slate-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <achievement.icon className="w-8 h-8 text-yellow-500" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-2">
                       {achievement.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-300 mb-2">
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-2">
                       {achievement.description}
                     </p>
-                    <p className="text-sm text-primary-600 dark:text-primary-400">
+                    <p className="text-xs sm:text-sm text-primary-600 dark:text-primary-400">
                       {achievement.location}
                     </p>
                   </div>
