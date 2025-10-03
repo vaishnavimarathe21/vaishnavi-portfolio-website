@@ -12,7 +12,7 @@ Create these environment variables in Vercel dashboard:
 
 #### Required:
 - `VITE_SLACK_WEBHOOK_URL` - Your Slack webhook URL for contact form
-- `VITE_SITE_URL` - Your Vercel domain (e.g., https://vaishnavi-marathe.vercel.app)
+- `VITE_SITE_URL` - Your Vercel domain (e.g., https://vaishnavimarathe.vercel.app)
 
 #### Optional:
 - `VITE_GA_TRACKING_ID` - Google Analytics tracking ID

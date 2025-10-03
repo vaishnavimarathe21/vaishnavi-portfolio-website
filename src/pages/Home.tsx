@@ -126,6 +126,7 @@ const Home = () => {
                 src="/images/avatar.jpg" 
                 alt="Vaishnavi Marathe" 
                 className="w-full h-full object-cover"
+                onContextMenu={(e) => e.preventDefault()}
               />
             </motion.div>
           </motion.div>
@@ -416,6 +417,7 @@ const Home = () => {
                     src="/images/avatar.jpg" 
                     alt="Vaishnavi Marathe" 
                     className="w-40 h-40 rounded-full object-cover"
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                 </div>
               </div>

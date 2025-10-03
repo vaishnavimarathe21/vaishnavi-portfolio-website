@@ -95,6 +95,7 @@ const About = () => {
                 src="/images/avatar.jpg" 
                 alt="Vaishnavi Marathe" 
                 className="w-full h-full object-cover"
+                onContextMenu={(e) => e.preventDefault()}
               />
             </motion.div>
             
