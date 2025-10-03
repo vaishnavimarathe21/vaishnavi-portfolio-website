@@ -91,9 +91,9 @@ export const addImageSecurity = () => {
       overlay.style.pointerEvents = 'auto'
       overlay.style.zIndex = '10'
       overlay.style.userSelect = 'none'
-      overlay.style.webkitUserSelect = 'none'
-      overlay.style.mozUserSelect = 'none'
-      overlay.style.msUserSelect = 'none'
+      ;(overlay.style as any).webkitUserSelect = 'none'
+      ;(overlay.style as any).mozUserSelect = 'none'
+      ;(overlay.style as any).msUserSelect = 'none'
       
       container.style.position = 'relative'
       container.appendChild(overlay)
