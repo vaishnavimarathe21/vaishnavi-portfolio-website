@@ -107,19 +107,19 @@ const Home = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-8">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 md:pt-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          <motion.div variants={itemVariants} className="mb-8">
+          <motion.div variants={itemVariants} className="mb-4 sm:mb-6 md:mb-8">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden shadow-xl"
+              className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center overflow-hidden shadow-xl"
             >
               {/* Profile Picture */}
               <img 
