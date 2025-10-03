@@ -91,7 +91,7 @@ const About = () => {
             {/* Large Profile Picture */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="w-48 h-48 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-8 flex items-center justify-center overflow-hidden shadow-2xl"
+              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center overflow-hidden shadow-2xl"
             >
               {/* Profile Picture */}
               <img 
@@ -104,14 +104,14 @@ const About = () => {
             {/* Name and Title */}
           <motion.h1 
             variants={itemVariants}
-              className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 px-4"
           >
               Vaishnavi Narottam Marathe
           </motion.h1>
             
           <motion.p 
             variants={itemVariants}
-              className="text-xl sm:text-2xl text-primary-600 dark:text-primary-400 mb-6 font-medium"
+              className="text-lg sm:text-xl md:text-2xl text-primary-600 dark:text-primary-400 mb-6 font-medium px-4"
           >
               Aspiring Machine Learning Engineer & AI/ML Student
           </motion.p>
@@ -121,10 +121,10 @@ const About = () => {
               variants={itemVariants}
               className="max-w-4xl mx-auto mb-12"
             >
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-6 text-center">
               My Journey
             </h2>
-              <div className="space-y-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed px-4">
                 <p>
               I'm a final-year B.Tech student specializing in Artificial Intelligence and Machine Learning 
               at R.C. Patel Institute of Technology. My passion lies in data analysis and transforming 
@@ -149,12 +149,12 @@ const About = () => {
               variants={itemVariants}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
               Technical Skills
             </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {/* Programming Languages */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3">
                       <Code2 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -184,7 +184,7 @@ const About = () => {
                 </div>
 
                 {/* Data Analysis & Visualization */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3">
                       <BarChart3 className="w-5 h-5 text-green-600 dark:text-green-400" />
@@ -214,7 +214,7 @@ const About = () => {
                 </div>
 
                 {/* Machine Learning & AI */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-3">
                       <Brain className="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -244,7 +244,7 @@ const About = () => {
                 </div>
 
                 {/* Databases & Tools */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-3">
                       <Database className="w-5 h-5 text-orange-600 dark:text-orange-400" />
@@ -274,7 +274,7 @@ const About = () => {
                 </div>
 
                 {/* Web Development */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mr-3">
                       <Code2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -304,7 +304,7 @@ const About = () => {
                 </div>
 
                 {/* Soft Skills */}
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-pink-100 dark:bg-pink-900 rounded-lg flex items-center justify-center mr-3">
                       <Trophy className="w-5 h-5 text-pink-600 dark:text-pink-400" />
@@ -348,7 +348,7 @@ const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
           >
             Experience
           </motion.h2>
@@ -357,22 +357,22 @@ const About = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <Briefcase className="w-8 h-8 text-primary-600 dark:text-primary-400" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
                         {exp.company}
                       </h3>
                       <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">
                         {exp.period}
                       </p>
                     </div>
-                    <p className="text-lg text-primary-600 dark:text-primary-400 mb-4">
+                    <p className="text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-4">
                       {exp.position}
                     </p>
                     <div className="text-slate-600 dark:text-slate-300">
@@ -403,7 +403,7 @@ const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
           >
             Education
           </motion.h2>
@@ -412,22 +412,22 @@ const About = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <GraduationCap className="w-8 h-8 text-primary-600 dark:text-primary-400" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
+                      <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
                       {edu.institution}
                     </h3>
                       <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">
                         {edu.period}
                       </p>
                     </div>
-                    <p className="text-lg text-primary-600 dark:text-primary-400 mb-2">
+                    <p className="text-base sm:text-lg text-primary-600 dark:text-primary-400 mb-2">
                       {edu.degree}
                     </p>
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-slate-600 dark:text-slate-300">
@@ -451,16 +451,16 @@ const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
           >
             Achievements & Hackathons
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">

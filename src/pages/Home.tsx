@@ -84,7 +84,7 @@ const Home = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              className="w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden shadow-xl"
+              className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden shadow-xl"
             >
               {/* Profile Picture */}
               <img 
@@ -97,7 +97,7 @@ const Home = () => {
 
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 px-4"
           >
             Hi, I'm{' '}
             <span className="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
@@ -107,7 +107,7 @@ const Home = () => {
 
           <motion.div 
             variants={itemVariants}
-            className="text-lg text-slate-600 dark:text-slate-300 mb-6 max-w-3xl mx-auto leading-relaxed min-h-[2rem] flex items-center justify-center"
+            className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 max-w-3xl mx-auto leading-relaxed min-h-[2rem] flex items-center justify-center px-4"
           >
             <div className="text-center">
               <span className="text-slate-700 dark:text-slate-300 font-medium">I Specialize in: </span>
@@ -120,7 +120,7 @@ const Home = () => {
 
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4"
           >
             <Link
               to="/projects"
@@ -139,7 +139,7 @@ const Home = () => {
           {/* Skills Icons */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-6 mb-16"
+            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-16 px-4"
           >
             {skillsIcons.map((skill, index) => (
               <motion.div
@@ -148,7 +148,7 @@ const Home = () => {
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow duration-200"
+                className="flex flex-col items-center space-y-2 p-3 sm:p-4 rounded-lg bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow duration-200"
               >
                 <skill.icon className={`w-8 h-8 ${skill.color}`} />
                 <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -159,21 +159,6 @@ const Home = () => {
           </motion.div>
 
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="flex flex-col items-center"
-          >
-            <span className="text-sm text-slate-400 mb-2">Scroll to explore</span>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-            >
-              <ArrowDown className="w-6 h-6 text-slate-400" />
-            </motion.div>
-          </motion.div>
         </motion.div>
       </section>
 

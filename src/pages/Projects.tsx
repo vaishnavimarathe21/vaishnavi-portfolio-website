@@ -110,13 +110,13 @@ const Projects = () => {
         >
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 px-4"
           >
             My Projects
           </motion.h1>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4"
           >
             Explore my portfolio of data analysis, machine learning, and computer vision projects
           </motion.p>
@@ -127,7 +127,7 @@ const Projects = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 px-4"
         >
           {categories.map((category) => {
             const Icon = getCategoryIcon(category)
@@ -137,7 +137,7 @@ const Projects = () => {
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border border-slate-200 dark:border-slate-700"
+                className="flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 border border-slate-200 dark:border-slate-700"
               >
                 <Icon className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                 <span className="font-medium text-slate-700 dark:text-slate-300">
@@ -154,7 +154,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {projects.map((project) => {
             const CategoryIcon = getCategoryIcon(project.category)
@@ -171,7 +171,7 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-4">
+                <div className="p-3 sm:p-4">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
@@ -183,14 +183,14 @@ const Projects = () => {
                           {project.status}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2">
                         {project.title}
                       </h3>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
+                  <p className="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-xs sm:text-sm">
                     {project.description}
                   </p>
 
@@ -283,11 +283,11 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <motion.div variants={itemVariants} className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+          <motion.div variants={itemVariants} className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl p-6 sm:p-8 text-white mx-4">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4">
               Interested in collaborating?
             </h3>
-            <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-primary-100 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
               I'm always excited to work on new projects and explore innovative solutions. 
               Let's discuss how we can work together!
             </p>
@@ -295,7 +295,7 @@ const Projects = () => {
               href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-primary-50 transition-colors duration-200"
+              className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-primary-50 transition-colors duration-200 text-sm sm:text-base"
             >
               Get In Touch
             </motion.a>

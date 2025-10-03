@@ -78,13 +78,13 @@ const Developer = () => {
         >
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 px-4"
           >
             Developer Profile
           </motion.h1>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4"
           >
             My journey in competitive programming and problem-solving
           </motion.p>
@@ -100,15 +100,15 @@ const Developer = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
+            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center"
           >
             Competitive Programming
           </motion.h2>
           <motion.div
             variants={itemVariants}
-            className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
+            className="bg-white dark:bg-slate-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
           >
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-4">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center">
                   <img 
@@ -118,10 +118,10 @@ const Developer = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
                     CodeChef Profile
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
                     Competitive Programming & Problem Solving
                   </p>
                 </div>
@@ -130,45 +130,45 @@ const Developer = () => {
                 href="https://www.codechef.com/users/rcp_221107017"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition-colors duration-200"
+                className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition-colors duration-200 text-sm sm:text-base self-start sm:self-auto"
               >
                 View Profile
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-6">
+              <div className="text-center p-3 sm:p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
                 <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : codechefData.rating}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Current Rating</div>
               </div>
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+              <div className="text-center p-3 sm:p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
                 <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : codechefData.problemsSolved.toLocaleString()}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Problems Solved</div>
               </div>
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+              <div className="text-center p-3 sm:p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
                 <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : codechefData.contests}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Contests</div>
               </div>
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+              <div className="text-center p-3 sm:p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
                 <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : `${codechefData.stars}★`}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Star Rating</div>
               </div>
             </div>
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="text-center p-3 sm:p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
                 <div className="text-lg font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : `#${codechefData.globalRank.toLocaleString()}`}
                 </div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Global Rank</div>
               </div>
-              <div className="text-center p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+              <div className="text-center p-3 sm:p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
                 <div className="text-lg font-bold text-orange-600 dark:text-orange-400">
                   {codechefData.loading ? '...' : `#${codechefData.countryRank.toLocaleString()}`}
                 </div>
@@ -176,8 +176,8 @@ const Developer = () => {
               </div>
             </div>
             <div className="mt-6">
-              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Recent Achievements</h4>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <h4 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-3">Recent Achievements</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 <div className="p-3 bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-yellow-900 dark:to-yellow-800 rounded-lg">
                   <div className="text-sm font-semibold text-yellow-800 dark:text-yellow-200">Problem Solver</div>
                   <div className="text-xs text-yellow-700 dark:text-yellow-300">Diamond Badge - 1000+ Problems</div>

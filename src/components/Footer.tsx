@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 // GitHub Brand Icon
 const GitHubIcon = ({ className }: { className?: string }) => (
@@ -59,8 +60,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-900 dark:bg-slate-950 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* About Section */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Vaishnavi Marathe</h3>
@@ -74,22 +75,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
+                <Link to="/about" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#projects" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
+                <Link to="/projects" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
+                <Link to="/contact" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://www.codechef.com/users/rcp_221107017" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
+                <a href="https://www.codechef.com/users/rcp_221107017" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors duration-200 text-sm">
                   CodeChef
                 </a>
               </li>
@@ -104,7 +105,7 @@ const Footer = () => {
             </p>
             
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               {socialLinks.map((link) => (
                 <motion.a
                   key={link.name}
@@ -130,11 +131,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+        <div className="border-t border-slate-800 mt-6 sm:mt-8 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
           <p className="text-slate-400 text-sm">
             © {currentYear} Vaishnavi Marathe. All rights reserved.
           </p>
-          <p className="text-slate-400 text-sm mt-2 sm:mt-0">
+          <p className="text-slate-400 text-sm text-center sm:text-left">
             Built with ❤️ by Vaishnavi Marathe using React, TypeScript & Tailwind CSS
           </p>
         </div>

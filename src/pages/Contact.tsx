@@ -160,13 +160,13 @@ const Contact = () => {
         >
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 px-4"
           >
             Get In Touch
           </motion.h1>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4"
           >
             I'm always excited to discuss new opportunities, collaborate on projects, or answer any questions you might have
           </motion.p>
@@ -177,12 +177,12 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
         >
           {/* Contact Form */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
                 Send me a message
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
@@ -190,7 +190,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
@@ -200,7 +200,7 @@ const Contact = () => {
                   {...register('name')}
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200 text-sm sm:text-base"
                   placeholder="Your full name"
                 />
                 {errors.name && (
@@ -219,7 +219,7 @@ const Contact = () => {
                   {...register('email')}
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200 text-sm sm:text-base"
                   placeholder="your.email@example.com"
                 />
                 {errors.email && (
@@ -238,7 +238,7 @@ const Contact = () => {
                   {...register('subject')}
                   type="text"
                   id="subject"
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200 text-sm sm:text-base"
                   placeholder="What's this about?"
                 />
                 {errors.subject && (
@@ -257,7 +257,7 @@ const Contact = () => {
                   {...register('message')}
                   id="message"
                   rows={6}
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200 resize-none"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-800 text-slate-900 dark:text-white transition-colors duration-200 resize-none text-sm sm:text-base"
                   placeholder="Tell me about your project or question..."
                 />
                 {errors.message && (
@@ -273,7 +273,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 text-white font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
               >
                 {isSubmitting ? (
                   <>
@@ -314,9 +314,9 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
                 Contact Information
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
@@ -324,12 +324,12 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ x: 5 }}
-                  className="flex items-center space-x-4 p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+                  className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
                 >
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
@@ -337,18 +337,18 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
                       {info.title}
                     </h3>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                        className="text-sm sm:text-base text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-slate-600 dark:text-slate-300">
+                      <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
                         {info.value}
                       </p>
                     )}
@@ -358,11 +358,11 @@ const Contact = () => {
             </div>
 
             {/* Additional Info */}
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900 dark:to-primary-800 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900 dark:to-primary-800 rounded-xl p-4 sm:p-6">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white mb-3">
                 Let's Connect!
               </h3>
-              <p className="text-slate-600 dark:text-slate-300">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
                 I'm always interested in discussing new opportunities, collaborating on projects, 
                 or simply having a conversation about Artificial Intelligence and technology. Feel free to reach out through any of the channels above!
               </p>
